@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local LLM Workspace</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}?v=3">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <div class="header-title">
+                <h1>Local LLM Workspace</h1>
+                <span class="status-badge">Offline | {{ model_name }}</span>
+            </div>
+            <button type="button" id="clear-btn" class="btn-secondary">Clear Chat</button>
+        </header>
+
+        <!-- Message History Window -->
+        <main id="chat-messages" class="chat-window">
+            <!-- Messages will be dynamically appended here by script.js -->
+        </main>
+
+        <!-- Input Control Footer -->
+        <footer class="app-footer">
+            <form id="chat-form" class="input-form">
+                <input 
+                    type="text" 
+                    id="user-input" 
+                    placeholder="Type a message..." 
+                    autocomplete="off" 
+                    required 
+                />
+                <button type="submit" id="send-btn" class="btn-primary">Send</button>
+            </form>
+        </footer>
+    </div>
+
+    <!-- Application Script -->
+    <script src="{{ url_for('static', filename='script.js') }}?v=2"></script>
+</body>
+</html>
